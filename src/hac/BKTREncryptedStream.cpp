@@ -75,12 +75,10 @@ pie::hac::BKTREncryptedStream::BKTREncryptedStream(const std::shared_ptr<tc::io:
 	for (size_t i = indirect_block->header.bucket_count; i > 0; --i)
 	{
 		const pie::hac::sIndirectStorageBucket& bucket = indirect_block->buckets[i - 1];
-		int64_t base_virtual_offset = indirect_block->base_virtual_bucket_offset[i - 1];
 		for (size_t j = bucket.header.entry_count; j > 0; --j)
 		{
 			const pie::hac::sIndirectStorageEntry& entry = bucket.entries[j - 1];
-			int64_t virtual_offset = base_virtual_offset + entry.virt_offset;
-
+			int64_t virtual_offset = entry.virt_offset;
 			// Check ordered entries
 			if (virtual_offset > end_virtual_offset)
 			{
