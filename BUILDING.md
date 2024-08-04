@@ -1,7 +1,7 @@
 # Building
 ## Git Submodules
 This project makes use of git submodules to import dependencies into the source tree.
-After cloning this repository using git, prior to building NSTool the dependencies need to be downloaded.
+After cloning this repository using git, prior to building libpietendo, the dependencies need to be downloaded.
 Run these two commands to initialise and download the dependencies:
 ```
 git submodule init
